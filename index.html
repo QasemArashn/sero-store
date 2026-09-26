@@ -1,328 +1,356 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>متجر سيرو</title>
+<link rel="stylesheet" href="./style/stylesheet.css">
+    <title>متجر سيرو | Sero Store</title>
+    <meta name="description" content="متجر سيرو - تسوق منتجاتنا بسهولة وتواصل معنا عبر واتساب">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            text-align: center;
-            color: #222;
-        }
-
-        header {
-            background-color: #222;
-            color: white;
-            padding: 30px 20px;
-        }
-
-        header h1 {
-            margin: 0 0 10px;
-        }
-
-        header p {
-            margin: 0;
-        }
-
-        .content {
-            padding: 25px 15px;
-        }
-
-        .links {
-            margin-bottom: 25px;
-        }
-
-        .links a {
-            display: inline-block;
-            margin: 6px;
-            padding: 12px 20px;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        .links a:hover {
-            opacity: 0.85;
-        }
-
-        .whatsapp-button {
-            background-color: #25D366 !important;
-        }
-
-        .product-image {
-            width: 100%;
-            max-width: 700px;
-            height: auto;
-            margin-top: 10px;
-            border-radius: 10px;
-        }
-
-        h2 {
-            margin-top: 35px;
-        }
-
-        .products {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px 0;
-        }
-
-        .product {
-            background-color: white;
-            width: 280px;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .product img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .product h3 {
-            font-size: 24px;
-            margin: 12px 0 5px;
-        }
-
-        .product p {
-            color: #666;
-        }
-
-        .product strong {
-            display: block;
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .product a {
-            display: block;
-            background-color: #25D366;
-            color: white;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 15px;
-        }
-
-        .product a:hover {
-            opacity: 0.8;
-        }
-
-        .footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-            margin-top: 40px;
-        }
-
-        .footer h2 {
-            margin: 0 0 10px;
-        }
-
-        .footer p {
-            color: #ddd;
-        }
-
-        .footer-links {
-            margin: 20px 0;
-        }
-
-        .footer-links a {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px 20px;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        .footer-links a.instagram {
-            background-color: #333;
-        }
-
-        .copyright {
-            margin-top: 25px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 25px 15px;
-            }
-
-            .product {
-                width: 100%;
-                max-width: 330px;
-            }
-
-            .links a {
-                display: block;
-                margin: 10px auto;
-                max-width: 300px;
-            }
-
-            .product-image {
-                max-width: 100%;
-            }
-        }
+        
     </style>
+  <!--   <script src="./style/script.js" defer></script> -->
+   <script src="./style/script.js" defer></script>
 </head>
 
 <body>
 
+    <!-- ===== الشريط العلوي ===== -->
+
     <header>
-        <h1>أهلاً بكم في متجر سيرو</h1>
-        <p>منتجات مميزة بأسعار مناسبة</p>
+
+        <div class="navbar">
+
+            <a href="#home" class="logo">
+                سيرو<span>.</span>
+            </a>
+
+            <nav>
+                <a href="#home">الرئيسية</a>
+                <a href="#products">المنتجات</a>
+                <a href="#features">مميزاتنا</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+
+            <button class="cart-button" onclick="showCart()">
+                🛒 السلة <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
     </header>
 
-    <div class="content">
 
-        <div class="links">
+    <!-- ===== المحتوى ===== -->
 
-            <a href="https://www.google.com" target="_blank" rel="noopener">
-                الذهاب إلى جوجل
-            </a>
+    <main>
 
-            <a href="https://www.instagram.com/se_ro221?stkn=M3J0NWtmMWI3NXZp"
-               target="_blank"
-               rel="noopener">
-                الذهاب إلى إنستجرام
-            </a>
+        <!-- الواجهة الرئيسية -->
 
-            <a class="whatsapp-button"
-               href="https://wa.me/967775365743?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AD%D8%AF%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA"
-               target="_blank"
-               rel="noopener">
-                راسلنا على واتساب
-            </a>
+        <section class="hero" id="home">
 
-        </div>
+            <div class="hero-content">
 
-        <img
-            src="Dior-Sauvage-ديور-ساڤاج.jpg"
-            alt="منتج من متجر سيرو"
-            class="product-image"
-        >
+                <div class="hero-text">
 
-        <h2>منتجاتنا</h2>
+                    <div class="small-title">
+                        مرحبًا بك في متجر سيرو
+                    </div>
 
-        <div class="products">
+                    <h1>
+                        تسوق بسهولة مع
+                        <span>سيرو</span>
+                    </h1>
 
-            <div class="product">
-                <img
-                    src="1VtamOVivygK6pC9Q8HmlHISGKmN7jH6dWQZNOcE.jpg"
-                    alt="عطر"
-                >
+                    <p>
+                        اكتشف منتجاتنا واختر ما يناسبك.
+                        اطلب بسهولة وتواصل معنا مباشرة عبر واتساب.
+                    </p>
 
-                <h3>عطر</h3>
+                    <div class="hero-buttons">
 
-                <p>عطر أنيق ومميز</p>
+                        <a
+                            href="#products"
+                            class="primary-button">
+                            تصفح المنتجات
+                        </a>
 
-                <strong>السعر: 15,000 ريال</strong>
+                        <a
+                            href="https://wa.me/qr/YDFGDYJZYL34H1"
+                            class="secondary-button"
+                            target="_blank">
+                            راسلنا واتساب
+                        </a>
 
-                <a
-                    href="https://wa.me/967775365743?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D8%B7%D8%B1"
-                    target="_blank"
-                    rel="noopener">
-                    استفسار عن العطر
-                </a>
+                    </div>
+
+                </div>
+
+                <div class="hero-logo">
+                    سيرو
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== المنتجات ===== -->
+
+        <section class="section" id="products">
+
+            <div class="section-title">
+
+                <h2>منتجاتنا</h2>
+
+                <p>
+                    اضغط على أي منتج لمشاهدة التفاصيل
+                </p>
+
             </div>
 
 
-            <div class="product">
-                <img
-                    src="IMG_٢٠٢٦٠٩٢٤_٠١١٨٤١.jpg"
-                    alt="ساعة"
-                >
+            <div class="search-box">
 
-                <h3>ساعة</h3>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="🔍 ابحث عن منتج..."
+                    onkeyup="searchProducts()">
 
-                <p>ساعة أنيقة وعصرية</p>
-
-                <strong>السعر: 25,000 ريال</strong>
-
-                <a
-                    href="https://wa.me/967775365743?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B3%D8%A7%D8%B9%D8%A9"
-                    target="_blank"
-                    rel="noopener">
-                    استفسار عن الساعة
-                </a>
             </div>
 
 
-            <div class="product">
-                <img
-                    src="41xfIF5r7ZL._AC_.jpg"
-                    alt="حقيبة"
-                >
+            <div class="products" id="productsContainer">
 
-                <h3>حقيبة</h3>
 
-                <p>حقيبة أنيقة وعملية</p>
+                <!-- المنتج الأول -->
 
-                <strong>السعر: 20,000 ريال</strong>
+            
 
-                <a
-                    href="https://wa.me/967775365743?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AD%D9%82%D9%8A%D8%A8%D8%A9"
-                    target="_blank"
-                    rel="noopener">
-                    استفسار عن الحقيبة
-                </a>
+
+                    </div>
+
+               
+
+            
+
+        </section>
+
+
+        <!-- ===== المميزات ===== -->
+
+        <section class="section" id="features">
+
+            <div class="section-title">
+
+                <h2>
+                    لماذا سيرو؟
+                </h2>
+
+                <p>
+                    نحاول أن نجعل تجربة التسوق أسهل
+                </p>
+
             </div>
 
-        </div>
-    </div>
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🚚
+                    </div>
+
+                    <h3>
+                        طلب بسهولة
+                    </h3>
+
+                    <p>
+                        اختر المنتج وتواصل معنا مباشرة لإتمام الطلب.
+                    </p>
+
+                </div>
 
 
-    <footer class="footer">
+                <div class="feature">
 
-        <h2>متجر سيرو</h2>
+                    <div class="feature-icon">
+                        💬
+                    </div>
 
-        <p>شكرًا لزيارتكم متجر سيرو</p>
+                    <h3>
+                        تواصل سريع
+                    </h3>
 
-        <div class="footer-links">
+                    <p>
+                        تواصل معنا عبر واتساب للاستفسار عن المنتجات.
+                    </p>
 
-            <a
-                href="https://wa.me/967775365743?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AD%D8%AF%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA"
-                target="_blank"
-                rel="noopener">
-                واتساب
-            </a>
+                </div>
 
-            <a
-                class="instagram"
-                href="https://www.instagram.com/se_ro221?stkn=M3J0NWtmMWI3NXZp"
-                target="_blank"
-                rel="noopener">
-                إنستجرام
-            </a>
 
-        </div>
+                <div class="feature">
 
-        <p class="copyright">
-            © 2026 متجر سيرو - جميع الحقوق محفوظة
+                    <div class="feature-icon">
+                        ⭐
+                    </div>
+
+                    <h3>
+                        تجربة بسيطة
+                    </h3>
+
+                    <p>
+                        تصميم سهل الاستخدام على الجوال والكمبيوتر.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== التواصل ===== -->
+
+        <section class="section" id="contact">
+
+            <div class="contact-box">
+
+                <h2>
+                    تواصل مع متجر سيرو
+                </h2>
+
+                <p>
+                    هل لديك سؤال عن أحد المنتجات؟ تواصل معنا.
+                </p>
+
+                <div class="contact-buttons">
+
+                    <a
+                        href="https://wa.me/qr/YDFGDYJZYL34H1"
+                        target="_blank"
+                        class="contact-button">
+                        💬 واتساب
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/se_ro221?stkn=M3J0NWtmMWI3NXZp"
+                        target="_blank"
+                        class="contact-button">
+                        📸 Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ===== التذييل ===== -->
+
+    <footer>
+
+        <h3>
+            متجر سيرو
+        </h3>
+
+        <p>
+            جميع الحقوق محفوظة © 2026 متجر سيرو
         </p>
 
     </footer>
+
+
+    <!-- ===== واتساب ===== -->
+
+    <a
+        href="https://wa.me/qr/YDFGDYJZYL34H1"
+        target="_blank"
+        class="whatsapp"
+        aria-label="تواصل معنا عبر واتساب">
+        ☎
+    </a>
+
+
+    <!-- ===== السلة ===== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="closeCart()">
+    </div>
+
+
+    <aside
+        class="cart-sidebar"
+        id="cartSidebar"
+        aria-label="سلة التسوق">
+
+        <div class="cart-header">
+
+            <h2>
+                سلة التسوق
+            </h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+                aria-label="إغلاق السلة">
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems">
+
+            <div class="empty-cart">
+                السلة فارغة حاليًا 🛒
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>
+                    الإجمالي:
+                </span>
+
+                <span id="cartTotal">
+                    0 ريال
+                </span>
+
+            </div>
+
+
+            <button
+                class="whatsapp-order"
+                onclick="sendOrderToWhatsApp()">
+                إرسال الطلب عبر واتساب
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ===== JavaScript ===== -->
+
+    <script>
+
+        
+    </script>
 
 </body>
 </html>
