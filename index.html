@@ -1,356 +1,286 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./style/stylesheet.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/stylesheet.css" />
     <title>متجر سيرو | Sero Store</title>
-    <meta name="description" content="متجر سيرو - تسوق منتجاتنا بسهولة وتواصل معنا عبر واتساب">
+    <meta
+      name="description"
+      content="متجر سيرو - تسوق منتجاتنا بسهولة وتواصل معنا عبر واتساب"
+    />
 
-    <style>
-        
-    </style>
-  <!--   <script src="./style/script.js" defer></script> -->
-   <script src="./style/script.js" defer></script>
-</head>
+    <style></style>
+    <!--   <script src="./style/script.js" defer></script> -->
+    <script src="./style/script.js" defer></script>
+  </head>
 
-<body>
-
+  <body>
     <!-- ===== الشريط العلوي ===== -->
 
     <header>
+      <div class="navbar">
+        <a href="#home" class="logo"> سيرو<span>.</span> </a>
 
-        <div class="navbar">
+        <nav>
+          <a href="#home">الرئيسية</a>
+          <a href="#products">المنتجات</a>
+          <a href="#features">مميزاتنا</a>
+          <a href="#contact">تواصل معنا</a>
+        </nav>
 
-            <a href="#home" class="logo">
-                سيرو<span>.</span>
-            </a>
-
-            <nav>
-                <a href="#home">الرئيسية</a>
-                <a href="#products">المنتجات</a>
-                <a href="#features">مميزاتنا</a>
-                <a href="#contact">تواصل معنا</a>
-            </nav>
-
-            <button class="cart-button" onclick="showCart()">
-                🛒 السلة <span id="cartCount">0</span>
-            </button>
-
-        </div>
-
+        <button class="cart-button" onclick="showCart()">
+          🛒 السلة <span id="cartCount">0</span>
+        </button>
+      </div>
     </header>
-
 
     <!-- ===== المحتوى ===== -->
 
     <main>
+      <!-- الواجهة الرئيسية -->
 
-        <!-- الواجهة الرئيسية -->
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="small-title">مرحبًا بك في متجر سيرو</div>
 
-        <section class="hero" id="home">
+            <h1>
+              تسوق بسهولة مع
+              <span>سيرو</span>
+            </h1>
 
-            <div class="hero-content">
+            <p>
+              اكتشف منتجاتنا واختر ما يناسبك. اطلب بسهولة وتواصل معنا مباشرة عبر
+              واتساب.
+            </p>
 
-                <div class="hero-text">
+            <div class="hero-buttons">
+              <a href="#products" class="primary-button"> تصفح المنتجات </a>
 
-                    <div class="small-title">
-                        مرحبًا بك في متجر سيرو
-                    </div>
-
-                    <h1>
-                        تسوق بسهولة مع
-                        <span>سيرو</span>
-                    </h1>
-
-                    <p>
-                        اكتشف منتجاتنا واختر ما يناسبك.
-                        اطلب بسهولة وتواصل معنا مباشرة عبر واتساب.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a
-                            href="#products"
-                            class="primary-button">
-                            تصفح المنتجات
-                        </a>
-
-                        <a
-                            href="https://wa.me/qr/YDFGDYJZYL34H1"
-                            class="secondary-button"
-                            target="_blank">
-                            راسلنا واتساب
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <div class="hero-logo">
-                    سيرو
-                </div>
-
+              <a
+                href="https://wa.me/967775365743?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AD%D8%AF%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA"
+                class="secondary-button"
+                target="_blank"
+              >
+                راسلنا واتساب
+              </a>
             </div>
+          </div>
 
-        </section>
+          <div class="hero-logo">سيرو</div>
+        </div>
+      </section>
 
+      <!-- ===== المنتجات ===== -->
 
-        <!-- ===== المنتجات ===== -->
+      <section class="section" id="products">
+        <div class="section-title">
+          <h2>منتجاتنا</h2>
 
-        <section class="section" id="products">
+          <p>اضغط على أي منتج لمشاهدة التفاصيل</p>
+        </div>
 
-            <div class="section-title">
+        <div class="search-box">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="🔍 ابحث عن منتج..."
+            onkeyup="searchProducts()"
+          />
+        </div>
 
-                <h2>منتجاتنا</h2>
+        <div class="products" id="productsContainer">
+          <!-- المنتج الأول -->
+        </div>
+      </section>
 
-                <p>
-                    اضغط على أي منتج لمشاهدة التفاصيل
-                </p>
+      <!-- ===== المميزات ===== -->
 
-            </div>
+      <section class="section" id="features">
+        <div class="section-title">
+          <h2>لماذا سيرو؟</h2>
 
+          <p>نحاول أن نجعل تجربة التسوق أسهل</p>
+        </div>
 
-            <div class="search-box">
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">🚚</div>
 
-                <input
-                    type="search"
-                    id="searchInput"
-                    placeholder="🔍 ابحث عن منتج..."
-                    onkeyup="searchProducts()">
+            <h3>طلب بسهولة</h3>
 
-            </div>
+            <p>اختر المنتج وتواصل معنا مباشرة لإتمام الطلب.</p>
+          </div>
 
+          <div class="feature">
+            <div class="feature-icon">💬</div>
 
-            <div class="products" id="productsContainer">
+            <h3>تواصل سريع</h3>
 
+            <p>تواصل معنا عبر واتساب للاستفسار عن المنتجات.</p>
+          </div>
 
-                <!-- المنتج الأول -->
+          <div class="feature">
+            <div class="feature-icon">⭐</div>
 
-            
+            <h3>تجربة بسيطة</h3>
 
+            <p>تصميم سهل الاستخدام على الجوال والكمبيوتر.</p>
+          </div>
+        </div>
+      </section>
 
-                    </div>
+      <!-- ===== التواصل ===== -->
 
-               
+      <section class="section" id="contact">
+        <div class="contact-box">
+          <h2>تواصل مع متجر سيرو</h2>
 
-            
+          <p>هل لديك سؤال عن أحد المنتجات؟ تواصل معنا.</p>
 
-        </section>
+          <div class="contact-buttons">
+            <a
+              href="https://wa.me/967775365743?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AD%D8%AF%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA"
+              target="_blank"
+              class="contact-button"
+            >
+              💬 واتساب
+            </a>
 
-
-        <!-- ===== المميزات ===== -->
-
-        <section class="section" id="features">
-
-            <div class="section-title">
-
-                <h2>
-                    لماذا سيرو؟
-                </h2>
-
-                <p>
-                    نحاول أن نجعل تجربة التسوق أسهل
-                </p>
-
-            </div>
-
-
-            <div class="features">
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        🚚
-                    </div>
-
-                    <h3>
-                        طلب بسهولة
-                    </h3>
-
-                    <p>
-                        اختر المنتج وتواصل معنا مباشرة لإتمام الطلب.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        💬
-                    </div>
-
-                    <h3>
-                        تواصل سريع
-                    </h3>
-
-                    <p>
-                        تواصل معنا عبر واتساب للاستفسار عن المنتجات.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ⭐
-                    </div>
-
-                    <h3>
-                        تجربة بسيطة
-                    </h3>
-
-                    <p>
-                        تصميم سهل الاستخدام على الجوال والكمبيوتر.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ===== التواصل ===== -->
-
-        <section class="section" id="contact">
-
-            <div class="contact-box">
-
-                <h2>
-                    تواصل مع متجر سيرو
-                </h2>
-
-                <p>
-                    هل لديك سؤال عن أحد المنتجات؟ تواصل معنا.
-                </p>
-
-                <div class="contact-buttons">
-
-                    <a
-                        href="https://wa.me/qr/YDFGDYJZYL34H1"
-                        target="_blank"
-                        class="contact-button">
-                        💬 واتساب
-                    </a>
-
-                    <a
-                        href="https://www.instagram.com/se_ro221?stkn=M3J0NWtmMWI3NXZp"
-                        target="_blank"
-                        class="contact-button">
-                        📸 Instagram
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
+            <a
+              href="https://www.instagram.com/se_ro221?stkn=M3J0NWtmMWI3NXZp"
+              target="_blank"
+              class="contact-button"
+            >
+              📸 Instagram
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
-
 
     <!-- ===== التذييل ===== -->
 
     <footer>
+      <h3>متجر سيرو</h3>
 
-        <h3>
-            متجر سيرو
-        </h3>
-
-        <p>
-            جميع الحقوق محفوظة © 2026 متجر سيرو
-        </p>
-
+      <p>جميع الحقوق محفوظة © 2026 متجر سيرو</p>
     </footer>
-
 
     <!-- ===== واتساب ===== -->
 
     <a
-        href="https://wa.me/qr/YDFGDYJZYL34H1"
-        target="_blank"
-        class="whatsapp"
-        aria-label="تواصل معنا عبر واتساب">
-        ☎
+      href="https://wa.me/967775365743?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AD%D8%AF%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA"
+      target="_blank"
+      class="whatsapp"
+      aria-label="تواصل معنا عبر واتساب"
+    >
+      ☎
     </a>
-
 
     <!-- ===== السلة ===== -->
 
-    <div
-        class="cart-overlay"
-        id="cartOverlay"
-        onclick="closeCart()">
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar" aria-label="سلة التسوق">
+      <div class="cart-header">
+        <h2>سلة التسوق</h2>
+
+        <button
+          class="close-cart"
+          onclick="closeCart()"
+          aria-label="إغلاق السلة"
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="cart-items" id="cartItems">
+        <div class="empty-cart">السلة فارغة حاليًا 🛒</div>
+      </div>
+
+    <div class="cart-footer">
+
+    <div class="cart-total">
+        <span>الإجمالي:</span>
+
+        <span id="cartTotal">
+            0 ريال
+        </span>
     </div>
 
 
-    <aside
-        class="cart-sidebar"
-        id="cartSidebar"
-        aria-label="سلة التسوق">
+    <!-- ===== نموذج بيانات العميل ===== -->
 
-        <div class="cart-header">
+    <div class="customer-form" id="customerForm">
 
-            <h2>
-                سلة التسوق
-            </h2>
-
-            <button
-                class="close-cart"
-                onclick="closeCart()"
-                aria-label="إغلاق السلة">
-                ×
-            </button>
-
-        </div>
+        <h3>
+            بيانات العميل
+        </h3>
 
 
-        <div
-            class="cart-items"
-            id="cartItems">
+        <label for="customerName">
+            الاسم
+        </label>
 
-            <div class="empty-cart">
-                السلة فارغة حاليًا 🛒
-            </div>
-
-        </div>
-
-
-        <div class="cart-footer">
-
-            <div class="cart-total">
-
-                <span>
-                    الإجمالي:
-                </span>
-
-                <span id="cartTotal">
-                    0 ريال
-                </span>
-
-            </div>
+        <input
+            type="text"
+            id="customerName"
+            placeholder="اكتب اسمك"
+        >
 
 
-            <button
-                class="whatsapp-order"
-                onclick="sendOrderToWhatsApp()">
-                إرسال الطلب عبر واتساب
-            </button>
+        <label for="customerPhone">
+            رقم الهاتف
+        </label>
 
-        </div>
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="اكتب رقم الهاتف"
+        >
 
+
+        <label for="customerAddress">
+            العنوان
+        </label>
+
+        <input
+            type="text"
+            id="customerAddress"
+            placeholder="اكتب عنوان التوصيل"
+        >
+
+
+        <label for="customerNotes">
+            ملاحظات الطلب
+            <span>(اختياري)</span>
+        </label>
+
+        <textarea
+            id="customerNotes"
+            placeholder="اكتب أي ملاحظات إضافية"
+            rows="3"
+        ></textarea>
+
+
+        <button
+            type="button"
+            class="whatsapp-order"
+            onclick="sendOrderToWhatsApp()">
+
+            💬 إرسال الطلب عبر واتساب
+
+        </button>
+
+    </div>
+
+</div>
     </aside>
-
 
     <!-- ===== JavaScript ===== -->
 
-    <script>
-
-        
-    </script>
-
-</body>
+    <script></script>
+  </body>
 </html>
